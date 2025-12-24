@@ -67,8 +67,16 @@ variable "vm_web_platform" {
 }
 
 variable "vm_web_resources" {
-  type        = list(number)
-  default     = {cores = 2, memory = 1, core_fraction = 20}
+  type        = object({
+    cores         = number
+    memory        = number
+    core_fraction = number
+  })
+  default     = {
+    cores         = 2
+    memory        = 1
+    core_fraction = 20
+  }
   description = "VPC resources"
 }
 
