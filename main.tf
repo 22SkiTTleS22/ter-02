@@ -30,11 +30,11 @@ resource "yandex_compute_instance" "platform" {
     cores =  var.vms_resources.web.cores
     memory = var.vms_resources.web.memory
     core_fraction = var.vms_resources.web.core_fraction
-    hdd_size = var.vms_resources.web.hdd_size
   }
   boot_disk {
     initialize_params {
       image_id = data.yandex_compute_image.ubuntu.image_id
+      size = var.vms_resources.web.hdd_size
     }
   }
   scheduling_policy {
@@ -60,11 +60,11 @@ resource "yandex_compute_instance" "platform2" {
     cores =  var.vms_resources.db.cores
     memory = var.vms_resources.db.memory
     core_fraction = var.vms_resources.db.core_fraction
-    hdd_size = var.vms_resources.db.hdd_size
   }
   boot_disk {
     initialize_params {
       image_id = data.yandex_compute_image.ubuntu.image_id
+      size = var.vms_resources.db.hdd_size
     }
   }
   scheduling_policy {
