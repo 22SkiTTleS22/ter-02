@@ -7,7 +7,7 @@ output "output" {
     web_ip = yandex_compute_instance.platform.network_interface[0].nat_ip_address
     web_fqdn = yandex_compute_instance.platform.fqdn
     db_name = yandex_compute_instance.platform2.name
-    db_ip = yandex_compute_instance.platform.network_interface[0].nat_ip_address
+    db_ip = yandex_compute_instance.platform2.network_interface[0].nat_ip_address
     db_fqdn = yandex_compute_instance.platform2.fqdn
   }
 }
