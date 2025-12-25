@@ -4,9 +4,9 @@
 output "output" {
   value = {
     name1 = yandex_compute_instance.vm_db_name
-    ip1 = yandex_compute_instance.vm_db_name.network_interface.[0].nat_ip_address
+    ip1 = yandex_compute_instance.vm_db_name.network_interface[0].nat_ip_address
     fqdn = yandex_compute_instance.platform
     name2 = yandex_compute_instance.vm_web_name
-    ip2 = yandex_compute_instance.vm_web_name.network_interface.[0].nat_ip_address
+    ip2 = yandex_compute_instance.vm_web_name.network_interface[0].nat_ip_address
   }
 }
