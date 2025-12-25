@@ -54,11 +54,11 @@ variable "vm_web_image" {
   description = "VPC image"
 }
 
-variable "vm_web_name" {
-  type        = string
-  default     = "netology-develop-platform-web"
-  description = "VPC name"
-}
+# variable "vm_web_name" {
+#   type        = string
+#   default     = "netology-develop-platform-web"
+#   description = "VPC name"
+# }
 
 variable "vm_web_platform" {
   type        = string
@@ -66,18 +66,36 @@ variable "vm_web_platform" {
   description = "VPC platform id"
 }
 
-variable "vm_web_resources" {
-  type        = object({
-    cores         = number
-    memory        = number
-    core_fraction = number
-  })
-  default     = {
-    cores         = 2
-    memory        = 1
-    core_fraction = 20
+# variable "vm_web_resources" {
+#   type        = object({
+#     cores         = number
+#     memory        = number
+#     core_fraction = number
+#   })
+#   default     = {
+#     cores         = 2
+#     memory        = 1
+#     core_fraction = 20
+#   }
+#   description = "VPC resources"
+# }
+
+variable "vms_resources" {
+  default = {
+    web = {
+      cores         = 2
+      memory        = 1
+      core_fraction = 20
+      hdd_size      = 10
+      hdd_type      = "network-hdd"
+    }
+    db = {
+      cores         = 2
+      memory        = 2
+      core_fraction = 20
+      hdd_size      = 11
+      hdd_type      = "network-hdd"
+    }
   }
-  description = "VPC resources"
+  description = "vms resources"
 }
-
-

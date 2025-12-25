@@ -21,17 +21,17 @@ yandex_compute_instance на отдельные переменные. К наз�
 
 Проверьте terraform plan. Изменений быть не должно. */
 
-variable "vm_db_image" {
-  type        = string
-  default     = "ubuntu-2004-lts"
-  description = "VPC image"
-}
+# variable "vm_db_image" {
+#   type        = string
+#   default     = "ubuntu-2004-lts"
+#   description = "VPC image"
+# }
 
-variable "vm_db_name" {
-  type        = string
-  default     = "netology-develop-platform-db"
-  description = "VPC name"
-}
+# variable "vm_db_name" {
+#   type        = string
+#   default     = "netology-develop-platform-db"
+#   description = "VPC name"
+# }
 
 variable "vm_db_platform" {
   type        = string
@@ -39,16 +39,16 @@ variable "vm_db_platform" {
   description = "VPC platform id"
 }
 
-variable "vm_db_resources" {
-  type        = object({
-    cores         = number
-    memory        = number
-    core_fraction = number
-  })
-  default     = {
-    cores         = 2
-    memory        = 2
-    core_fraction = 20
-  }
-  description = "VPC resources"
-}
+# variable "vm_db_resources" {
+#   type        = object({
+#     cores         = number
+#     memory        = number
+#     core_fraction = number
+#   })
+#   default     = {
+#     cores         = 2
+#     memory        = 2
+#     core_fraction = 20
+#   }
+#   description = "VPC resources"
+# }
