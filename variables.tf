@@ -33,11 +33,11 @@ variable "vpc_name" {
 
 ###ssh vars
 
-variable "vms_ssh_root_key" {
-  type        = string
-  default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINFSsA90cPfmjuRU29aEnlkOxfecFyCIZaeJp9AqUlg0 drili@MrMiner"
-  description = "ssh-keygen -t ed25519"
-}
+# variable "vms_ssh_root_key" {
+#   type        = string
+#   default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINFSsA90cPfmjuRU29aEnlkOxfecFyCIZaeJp9AqUlg0 drili@MrMiner"
+#   description = "ssh-keygen -t ed25519"
+# }
 
 /* Замените все хардкод-значения для ресурсов yandex_compute_image и 
 yandex_compute_instance на отдельные переменные. К названиям переменных ВМ 
@@ -98,4 +98,11 @@ variable "vms_resources" {
     }
   }
   description = "vms resources"
+}
+
+variable "metadata" {
+  default = {
+    serial-port-enable = 1
+    ssh-keys           = "ubuntu:ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINFSsA90cPfmjuRU29aEnlkOxfecFyCIZaeJp9AqUlg0 drili@MrMiner"
+  }
 }
